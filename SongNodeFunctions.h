@@ -2,7 +2,7 @@ struct song_node {
 char name[100];
 char artist[100];
 struct song_node *next; };
-struct song_node * newNode(char artisty[],char songy[] );
+struct song_node * newSong(char artisty[],char songy[] );
 struct song_node * insert_song(struct song_node *listy,char *artist,char *song );
 struct song_node * insert_front(struct song_node *listy,char *artist,char *song );
 void print_list(struct song_node *listy);

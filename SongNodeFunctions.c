@@ -4,7 +4,7 @@
 #include <time.h>
 #include "SongNodeFunctions.h"
 
-struct song_node * newNode(char artisty[],char songy[] ){
+struct song_node * newSong(char artisty[],char songy[] ){
   struct song_node *new = malloc(sizeof(struct song_node));
 strncpy(new->artist, artisty, 100);
 strncpy(new->name,songy,100);
@@ -32,21 +32,21 @@ void print_list(struct song_node * myNode) {
   return;
 }
 struct song_node * insert_front(struct song_node *listy,char artisty[],char songy[] ){
-  struct song_node *new = newNode(artisty,songy);
+  struct song_node *new = newSong(artisty,songy);
 new->next=listy;
 return new;
 }
-struct song_node * insert_song(struct song_node *listy,char *artist,char *song ){
+struct song_node * insert_song(struct song_node *listy,char artisty[],char songy[] ){
   struct song_node * newNode = listy;
-        struct song_node *new = newNode(artisty,songy);
+        struct song_node *new = newSong(artisty,songy);
   while (newNode->next!=NULL){
-    if (strcmp(artist,newNode->next->artist)>0){
+    if (strcmp(artisty,newNode->next->artist)>0){
         new->next=newNode->next;
         NewNode->next=new;
     }
-    elseif (strcmp(artist,newNode->next->artist)==0)){
-      while(strcmp(artist,newNode->next->artist)==0)){
-        if (strcmp(song,newNode->next->name)>0){
+    elseif (strcmp(artisty,newNode->next->artist)==0)){
+      while(strcmp(artisty,newNode->next->artist)==0)){
+        if (strcmp(songy,newNode->next->name)>0){
             new->next=newNode->next;
             NewNode->next=new;
       }

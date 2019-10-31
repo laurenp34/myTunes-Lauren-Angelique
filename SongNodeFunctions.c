@@ -38,21 +38,23 @@ return new;
 }
 struct song_node * insert_song(struct song_node *listy,char artisty[],char songy[] ){
   struct song_node * newNode = listy;
-        struct song_node *new = newSong(artisty,songy);
+  struct song_node *new = newSong(artisty,songy);
   while (newNode->next!=NULL){
     if (strcmp(artisty,newNode->next->artist)>0){
         new->next=newNode->next;
-        NewNode->next=new;
+        newNode->next=new;
     }
-    elseif (strcmp(artisty,newNode->next->artist)==0)){
-      while(strcmp(artisty,newNode->next->artist)==0)){
+    else if (strcmp(artisty,newNode->next->artist)==0){
+      while(strcmp(artisty,newNode->next->artist)==0){
         if (strcmp(songy,newNode->next->name)>0){
             new->next=newNode->next;
-            NewNode->next=new;
-      }
+            newNode->next=new;}
     }
+
+  }
     else newNode=newNode->next;
   }
+  return listy;
 }
 void main(){//temporary main to test as we go
 struct song_node * listy;
@@ -60,5 +62,7 @@ char song[100]  = "Hello";
 char artist[100] = "Adele";
 listy=insert_front(listy,artist, song);
 listy=insert_front(listy,"Artist 2","Song 2");
+listy=insert_front(listy, "Michael Jackson", "Thriller");
+listy=insert_front(listy, "NSYNC", "Bye Bye Bye");
 print_list(listy);
 }

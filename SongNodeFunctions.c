@@ -47,9 +47,9 @@ struct song_node * insert_song(struct song_node *listy,char artisty[],char songy
     return new;
   }
   if (strcmp(artisty,newNode->artist)==0){
-    if (strcmp(songy,newNode->name)<0)
+    if (strcmp(songy,newNode->name)<0){
       new->next=listy;
-      return new;
+      return new;}
     }
   while (newNode->next!=NULL){
     if (strcmp(artisty,newNode->next->artist)<0){
@@ -91,5 +91,7 @@ printf("\n");
 listy=insert_song(listy,"Michael Jackson", "You");
 listy=insert_song(listy, "ABC", "Harmony");
 listy=insert_song(listy, "ABC", "Arms");
+listy=insert_song(listy,"Zedd","Guitar Man");
+listy=insert_song(listy,"ABC","Into it");
 print_list(listy);
 }

@@ -81,13 +81,24 @@ while (newNode!=NULL){
     return newNode;
   }
   newNode=newNode->next;
-}
+  }
 printf("Song not found!\n");
+return NULL;
+}
+struct song_node * find_artist(struct song_node *listy,char *artisty){
+struct song_node * newNode = listy;
+while (newNode!=NULL){
+if (strcmp(newNode->artist, artisty)==0){
+  return newNode;
+}
+newNode=newNode->next;
+}
 return NULL;
 }
 
 void main(){//temporary main to test as we go
 struct song_node * listy;
+struct song_node * other;
 char song[100]  = "Hello";
 char artist[100] = "Adele";
 listy=newSong(artist, song);
@@ -120,4 +131,7 @@ printf("\nLooking for ABC: Hello\n");
 find_song(listy,"ABC","Hello");
 printf("\nLooking for Taylor Swift: Love Story\n");
 find_song(listy,"Taylor Swift","Love Story");
+printf("\nLooking for Michael Jackson\n");
+other=find_artist(listy,"Michael Jackson");
+print_list(other);
 }

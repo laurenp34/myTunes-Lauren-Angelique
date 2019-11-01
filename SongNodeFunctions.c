@@ -38,6 +38,7 @@ struct song_node * insert_front(struct song_node *listy,char artisty[],char song
 new->next=listy;
 return new;
 }
+
 struct song_node * insert_song(struct song_node *listy,char artisty[],char songy[] ){
   struct song_node * newNode = listy;
   struct song_node *new = newSong(artisty,songy);
@@ -71,6 +72,18 @@ struct song_node * insert_song(struct song_node *listy,char artisty[],char songy
   new->next=NULL;
   return listy;
 }
+void find_song(struct song_node *listy, char *artisty, char *songy){
+    struct song_node * newNode = listy;
+while (newNode!=NULL){
+  if (strcmp(newNode->artist, artisty)==0 && strcmp(newNode->name,songy)==0){
+    printf("Song found!\n");
+    printf("%s: %s\n",artisty,songy);
+    return;
+  }
+  newNode=newNode->next;
+}
+printf("Song not found!\n");
+}
 void main(){//temporary main to test as we go
 struct song_node * listy;
 char song[100]  = "Hello";
@@ -94,4 +107,15 @@ listy=insert_song(listy, "ABC", "Arms");
 listy=insert_song(listy,"Zedd","Guitar Man");
 listy=insert_song(listy,"ABC","Into it");
 print_list(listy);
+printf("\nLooking for Michael Jackson: Thriller\n");
+find_song(listy,"Michael Jackson","Thriller");
+printf("\nLooking for Zedd: Guitar Man\n");
+find_song(listy,"Zedd","Guitar Man");
+print_list(listy);
+printf("\nLooking for ABC: Arms\n");
+find_song(listy,"ABC","Arms");
+printf("\nLooking for ABC: Hello\n");
+find_song(listy,"ABC","Hello");
+printf("\nLooking for Taylor Swift: Love Story\n");
+find_song(listy,"Taylor Swift","Love Story");
 }

@@ -10,13 +10,15 @@ strncpy(new->artist, artisty, 100);
 strncpy(new->name,songy,100);
 return new;
 }
-
+void print_song(struct song_node * myNode){
+printf(" %s: %s |",myNode->artist,myNode->name);
+}
 void print_list(struct song_node * myNode) {
   //make new node copy, so as not to modify original pointer.
   struct song_node * newNode = myNode;
   //if current node is null, print nothing!
   if (newNode == NULL) {
-    printf("{}");
+    printf("{}\n");
     return;
   }
   //if it's not null:
@@ -95,8 +97,29 @@ newNode=newNode->next;
 }
 return NULL;
 }
+int findlength(struct song_node *listy){
+  int length=0;
+  struct song_node * newNode = listy;
+  while (newNode!=NULL){
+    length++;
+    newNode=newNode->next;
+  }
+  return length;
+}
+struct song_node * randomly(struct song_node *listy){
+  srand(time(NULL));
+  int length=findlength(listy);
+  int a =rand()%length;
+  //printf("A is: %d",a);
+    struct song_node * newNode = listy;
+  while (a>0){
+    newNode=newNode->next;
+      a--;
+  }
+  return newNode;
+}
 
-void main(){//temporary main to test as we go
+int main(){//temporary main to test as we go
 struct song_node * listy;
 struct song_node * other;
 char song[100]  = "Hello";
@@ -134,4 +157,11 @@ find_song(listy,"Taylor Swift","Love Story");
 printf("\nLooking for Michael Jackson\n");
 other=find_artist(listy,"Michael Jackson");
 print_list(other);
+printf("\nGenerating random song:\n");
+other=randomly(listy);
+print_song(other);
+printf("\nGenerating random song:\n");
+other=randomly(listy);
+print_song(other);
+return 0;
 }

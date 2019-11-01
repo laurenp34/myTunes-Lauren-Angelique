@@ -72,18 +72,20 @@ struct song_node * insert_song(struct song_node *listy,char artisty[],char songy
   new->next=NULL;
   return listy;
 }
-void find_song(struct song_node *listy, char *artisty, char *songy){
+struct song_node * find_song(struct song_node *listy, char *artisty, char *songy){
     struct song_node * newNode = listy;
 while (newNode!=NULL){
   if (strcmp(newNode->artist, artisty)==0 && strcmp(newNode->name,songy)==0){
     printf("Song found!\n");
     printf("%s: %s\n",artisty,songy);
-    return;
+    return newNode;
   }
   newNode=newNode->next;
 }
 printf("Song not found!\n");
+return NULL;
 }
+
 void main(){//temporary main to test as we go
 struct song_node * listy;
 char song[100]  = "Hello";

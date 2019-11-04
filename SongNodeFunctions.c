@@ -195,6 +195,23 @@ struct song_node * remove_song(struct song_node * listy,char *artist, char *song
   return listy;
 }
 
+struct song_node * free_list(struct song_node *listy) {
+  struct song_node * helper = listy;
+  if (listy == NULL) {
+    return listy;
+  }
+  while (listy->next != NULL) {
+    printf("freeing node: %s - %s\n", listy->artist, listy->name);
+    helper = listy->next;
+    free(listy);
+    listy = helper;
+  }
+  printf("freeing node: %s - %s\n", listy->artist, listy->name);
+  free(listy);
+  listy = NULL;
+  return listy;
+}
+
 
 // int main(){//temporary main to test as we go
 // struct song_node * listy;

@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include "SongLibraryFunctions.h"
-#include "SongNodeFunctions.c"
+#include "SongNodeFunctions.h"
 // #include "SongNodeFunctions.c"
 
 void initialize_table() {

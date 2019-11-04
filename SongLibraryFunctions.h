@@ -1,7 +1,7 @@
-struct song_node {
-char name[100];
-char artist[100];
-struct song_node *next; };
+// struct song_node {
+// char name[100];
+// char artist[100];
+// struct song_node *next; };
 struct song_node * table[27];
 void add_song(char * artist, char *song);
 struct song_node * search_song(char *artist, char *song);

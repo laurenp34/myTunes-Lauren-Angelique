@@ -1,13 +1,13 @@
-all: SongNodeFunctions.o playlist.o main.o
-	gcc -o songnodetest SongNodeFunctions.o playlist.o main.o
+all: SongNodeFunctions.o SongLibraryFunctions.o main.o
+	gcc -o songnodetest SongNodeFunctions.o SongLibraryFunctions.o main.o
 
 SongNodeFunctions.o: SongNodeFunctions.c SongNodeFunctions.h
 	gcc -c SongNodeFunctions.c
 
-playlist.o: playlist.c playlist.h
-	gcc -c playlist.c
+SongLibraryFunctions.o: SongLibraryFunctions.c SongLibraryFunctions.h
+	gcc -c SongLibraryFunctions.c
 
-main.o: main.c SongNodeFunctions.h playlist.h
+main.o: main.c SongNodeFunctions.h SongLibraryFunctions.h
 	gcc -c main.c
 
 run:

@@ -8,6 +8,7 @@ struct song_node * newSong(char artisty[],char songy[] ){
   struct song_node *new = malloc(sizeof(struct song_node));
 strncpy(new->artist, artisty, 100);
 strncpy(new->name,songy,100);
+  new->next = NULL;
 return new;
 }
 void print_song(struct song_node * myNode){

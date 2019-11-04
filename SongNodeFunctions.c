@@ -118,10 +118,12 @@ struct song_node * find_artist(struct song_node *listy,char *artisty){
 struct song_node * newNode = listy;
 while (newNode!=NULL){
 if (strcmp(newNode->artist, artisty)==0){
+  printf("Artist found!\n");
   return newNode;
 }
 newNode=newNode->next;
 }
+printf("Artist not found!");
 return NULL;
 }
 int findlength(struct song_node *listy){

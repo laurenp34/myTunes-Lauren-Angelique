@@ -54,6 +54,7 @@ void print_letter(char a) {
   if (listNum > 26) {
     return;
   }
+  printf("%c list:",a);
   print_list(table[listNum]);
 }
 void shuffle(){

@@ -11,3 +11,4 @@ struct song_node * find_artist(struct song_node *listy,char *artist);
 struct song_node * randomly(struct song_node *listy);
 struct song_node * remove_song(struct song_node * listy,char *artist, char *song);
 struct song_node * free_list(struct song_node *listy);
+int findlength(struct song_node *listy);

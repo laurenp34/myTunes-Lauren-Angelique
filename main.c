@@ -198,7 +198,7 @@ printf("\nDeleting Ed Sheeran: Photograph:\n");
 printf("Library now:\n");
 delete_song("Ed Sheeran","Photograph");
 print_library();
-printf("Deleting Rich Brian: 100 Degrees\n R list now:\n");
+printf("\n\nDeleting Rich Brian: 100 Degrees\n R list now:\n");
 delete_song("Rich Brian","100 Degrees");
 print_letter('r');
 printf("\nClearing the library:\n");

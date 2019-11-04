@@ -132,8 +132,9 @@ int findlength(struct song_node *listy){
   }
   return length;
 }
+
 struct song_node * randomly(struct song_node *listy){
-  srand(time(NULL));
+
   int length=findlength(listy);
   int a =rand()%length;
   //printf("A is: %d",a);

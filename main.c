@@ -187,4 +187,17 @@ int main() {
   print_letter('z');
   print_letter('h');
 
+printf("Testing shuffle.\n");
+shuffle();
+printf("Testing shuffle again.\n");
+shuffle();
+printf("Deleting Photograph\n");
+delete_song("Ed Sheeran","Photograph");
+print_library();
+printf("Deleting Rich Brian: 100 Degrees\n R list now:\n");
+delete_song("Rich Brian","100 Degrees");
+print_letter('r');
+printf("Clearing the library.\n");
+clear();
+print_library();
 }

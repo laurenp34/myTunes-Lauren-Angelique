@@ -30,12 +30,17 @@ struct song_node * search_song(char *artist, char *song) {
 
 void print_library() {
   char i=0;
+  int empty =0;
   for (i=0;i<27;i++){
     //don't print list if empty
     if (table[i]!=NULL) {
       printf("%c list\n ", (i+49)+'0');
       print_list(table[i]);
+      empty=1;
     }
+  }
+  if (empty==0){
+    printf("Library is empty!\n");
   }
 }
 
@@ -51,7 +56,25 @@ void print_letter(char a) {
   }
   print_list(table[listNum]);
 }
-
+void shuffle(){
+  int i =0;
+  int a =rand()%26;
+  for (i=0;i<3;i++){
+    print_song(randomly(table[a]));
+    a=rand()%26;
+  }
+}
+void delete_song(char *artist, char *song){
+  int listNum = artist[0]-65;
+  table[listNum]=remove_song(table[listNum],artist,song);
+}
+void clear(){
+  int i;
+  for (i=0;i<27;i++){
+    free_list(table[i]);
+  }
+  initialize_table();
+}
 // int main()  {
 //   printf("%d", 'a');
 //   return 0;

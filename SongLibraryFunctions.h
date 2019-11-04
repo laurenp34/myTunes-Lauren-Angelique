@@ -10,7 +10,7 @@ void print_letter(char a);
 void print_artist(char *artist);
 void print_library();
 void shuffle();
-void delete_song();
+void delete_song(char *artist, char *song);
 void clear();
 /*Add song nodes.
 Search for a song given song and artist name (return a pointer).

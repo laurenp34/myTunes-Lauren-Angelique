@@ -12,7 +12,7 @@ strncpy(new->name,songy,100);
 return new;
 }
 void print_song(struct song_node * myNode){
-printf(" %s: %s |",myNode->artist,myNode->name);
+printf(" %s: %s \n",myNode->artist,myNode->name);
 }
 void print_list(struct song_node * myNode) {
   //make new node copy, so as not to modify original pointer.

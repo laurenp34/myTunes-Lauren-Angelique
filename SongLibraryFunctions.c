@@ -19,7 +19,7 @@ void add_song(char * artist, char *song) {
   if (table[listNum]==NULL) {
     table[listNum] = newSong(artist,song);
   } else {
-    insert_song(table[listNum], artist, song);
+    table[listNum] = insert_song(table[listNum], artist, song);
   }
 }
 

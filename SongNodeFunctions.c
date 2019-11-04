@@ -145,7 +145,7 @@ struct song_node * randomly(struct song_node *listy){
   return newNode;
 }
 
-struct song_node * remove_song(struct song_node * listy, char * artist, char * song) {
+struct song_node * remove_song(struct song_node * listy,char *artist, char *song) {
   if (listy == NULL) return listy;
   struct song_node * current = listy;
   //if first node is a match:
@@ -194,63 +194,63 @@ struct song_node * remove_song(struct song_node * listy, char * artist, char * s
 }
 
 
-int main(){//temporary main to test as we go
-struct song_node * listy;
-struct song_node * other;
-char song[100]  = "Hello";
-char artist[100] = "Adele";
-listy=newSong(artist, song);
-listy->next=NULL;
-//listy=insert_front(listy,"Artist 2","Song 2");
-listy=insert_song(listy, "Michael Jackson", "Thriller");
-listy=insert_song(listy, "NSYNC", "Bye Bye Bye");
-listy=insert_song(listy, "Prince", "Purple Rain");
-
-//testing remove:
-printf("------------------");
-debug_print_list(listy);
-printf("\n");
-remove_song(listy, "Michael Jackson", "Thriller");
-print_list(listy);
-printf("\n");
-remove_song(listy, "Prince", "Purple Rain");
-print_list(listy);
-
-printf("------------------------\n\n");
-
-char a = 'a';
-char b= 'b';
-char * lettera = &a;
-char * letterb = &b;
-//printf("comparing a to be: %d", strcmp(lettera,letterb));
-print_list(listy);
-listy=insert_song(listy,"Mg", "You");
-printf("\n");
-listy=insert_song(listy,"Michael Jackson", "You");
-listy=insert_song(listy, "ABC", "Harmony");
-listy=insert_song(listy, "ABC", "Arms");
-listy=insert_song(listy,"Zedd","Guitar Man");
-listy=insert_song(listy,"ABC","Into it");
-print_list(listy);
-printf("\nLooking for Michael Jackson: Thriller\n");
-find_song(listy,"Michael Jackson","Thriller");
-printf("\nLooking for Zedd: Guitar Man\n");
-find_song(listy,"Zedd","Guitar Man");
-print_list(listy);
-printf("\nLooking for ABC: Arms\n");
-find_song(listy,"ABC","Arms");
-printf("\nLooking for ABC: Hello\n");
-find_song(listy,"ABC","Hello");
-printf("\nLooking for Taylor Swift: Love Story\n");
-find_song(listy,"Taylor Swift","Love Story");
-printf("\nLooking for Michael Jackson\n");
-other=find_artist(listy,"Michael Jackson");
-print_list(other);
-printf("\nGenerating random song:\n");
-other=randomly(listy);
-print_song(other);
-printf("\nGenerating random song:\n");
-other=randomly(listy);
-print_song(other);
-return 0;
-}
+// int main(){//temporary main to test as we go
+// struct song_node * listy;
+// struct song_node * other;
+// char song[100]  = "Hello";
+// char artist[100] = "Adele";
+// listy=newSong(artist, song);
+// listy->next=NULL;
+// //listy=insert_front(listy,"Artist 2","Song 2");
+// listy=insert_song(listy, "Michael Jackson", "Thriller");
+// listy=insert_song(listy, "NSYNC", "Bye Bye Bye");
+// listy=insert_song(listy, "Prince", "Purple Rain");
+//
+// //testing remove:
+// printf("------------------");
+// debug_print_list(listy);
+// printf("\n");
+// remove_song(listy, "Michael Jackson", "Thriller");
+// print_list(listy);
+// printf("\n");
+// remove_song(listy, "Prince", "Purple Rain");
+// print_list(listy);
+//
+// printf("------------------------\n\n");
+//
+// char a = 'a';
+// char b= 'b';
+// char * lettera = &a;
+// char * letterb = &b;
+// //printf("comparing a to be: %d", strcmp(lettera,letterb));
+// print_list(listy);
+// listy=insert_song(listy,"Mg", "You");
+// printf("\n");
+// listy=insert_song(listy,"Michael Jackson", "You");
+// listy=insert_song(listy, "ABC", "Harmony");
+// listy=insert_song(listy, "ABC", "Arms");
+// listy=insert_song(listy,"Zedd","Guitar Man");
+// listy=insert_song(listy,"ABC","Into it");
+// print_list(listy);
+// printf("\nLooking for Michael Jackson: Thriller\n");
+// find_song(listy,"Michael Jackson","Thriller");
+// printf("\nLooking for Zedd: Guitar Man\n");
+// find_song(listy,"Zedd","Guitar Man");
+// print_list(listy);
+// printf("\nLooking for ABC: Arms\n");
+// find_song(listy,"ABC","Arms");
+// printf("\nLooking for ABC: Hello\n");
+// find_song(listy,"ABC","Hello");
+// printf("\nLooking for Taylor Swift: Love Story\n");
+// find_song(listy,"Taylor Swift","Love Story");
+// printf("\nLooking for Michael Jackson\n");
+// other=find_artist(listy,"Michael Jackson");
+// print_list(other);
+// printf("\nGenerating random song:\n");
+// other=randomly(listy);
+// print_song(other);
+// printf("\nGenerating random song:\n");
+// other=randomly(listy);
+// print_song(other);
+// return 0;
+// }

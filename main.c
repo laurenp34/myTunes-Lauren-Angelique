@@ -101,6 +101,10 @@ int main() {
   listy = remove_song(listy, "Calvin Harris", "Slide");
   print_list(listy);
 
+  printf("\n\nTESTING FREE_LIST:\n");
+  listy = free_list(listy);
+  print_list(listy);
+
   printf("\n\n-------------------------\n");
   printf("TESTING SONG LIBRARY FUNCTIONS:\n");
   printf("-------------------------\n\n");
